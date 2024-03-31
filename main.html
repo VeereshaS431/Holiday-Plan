@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1c0a51;
+        }
+
+        .nav {
+            display: flex;
+            padding: 10px;
+            /* justify-content: center; */
+            align-items: center;
+            column-gap: 50px;
+            position: sticky;
+            top: 0px;
+            opacity: 0.9;
+            z-index: 5;
+            background-color: #160742;
+        }
+
+        .logo {
+            width: 80px;
+        }
+
+        ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        ul li {
+            list-style: none;
+            font-size: 20px;
+
+        }
+
+        ul li a {
+            color: white;
+            font-weight: bold;
+        }
+
+        .userName {
+            display: flex;
+            margin-left: 100px;
+            column-gap: 80px;
+        }
+
+        .userlogo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        .userlogo i {
+            font-size: 25px;
+            color: white;
+        }
+
+        .log-user {
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .userName button {
+            width: 120px;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(30, 102, 164);
+            color: white;
+        }
+
+        .userName button:active{
+            background-color: rgb(241, 244, 247);
+            color: black;
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-logo {
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            z-index: -1;
+            height: 90vh;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 20px;
+            width: 40vw;
+            margin-top: 120px;
+            text-align: center;
+        }
+
+        .box h1 {
+            font-size: 2.4em;
+            color: white;
+        }
+
+        .box p {
+            font-size: 20px;
+            color: white;
+        }
+
+        .box button {
+            width: 120px;
+            height: 35px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(30, 102, 164);
+            color: white;
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        #service {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-top: 250px;
+            row-gap: 30px;
+        }
+
+        .service-header h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .card {
+            width: 300px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 20px;
+            /* border: 1px solid rgb(253, 253, 253); */
+            background-color: #20124e;
+            border-radius: 10px;
+            box-shadow: 5px 5px 20px black;
+
+
+        }
+
+        .card:hover {
+            transform: scale(1.1, 1.1);
+            transition: all 1s ease;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 20px;
+            text-align: center;
+        }
+
+        #service .card i {
+            font-size: 50px;
+            color: white;
+        }
+
+        #about {
+            display: flex;
+            margin-top: 50px;
+
+        }
+
+        .about-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        h1,
+        p {
+            color: white;
+        }
+
+        .about-header {
+            width: 250px;
+            height: 150px;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            left: 50px;
+            background-color: #20124e;
+            box-shadow: 5px 5px 20px black;
+            border-radius: 10px;
+            z-index: 1;
+
+        }
+
+        .about-header:hover {
+            transform: translateX(50px);
+            transition: all 1s ease-in;
+
+        }
+
+
+        .about-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 20px;
+            /* border: 1px solid black; */
+            width: 550px;
+            height: 300px;
+            background-color: #20124e;
+            box-shadow: 5px 5px 20px black;
+            border-radius: 10px;
+            /* z-index: -1; */
+        }
+
+        .about-info:hover {
+            transform: translateX(-50px);
+            width: 600px;
+            transition: all 1s ease-in;
+
+        }
+
+        .about-info button {
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .about-info h1 {
+            margin-left: 50px;
+        }
+
+        .about-info p {
+            text-align: center;
+            margin-left: 110px;
+            margin-right: 50px;
+        }
+
+        .about-info button {
+            margin-left: 50px;
+        }
+
+        span img {
+            width: 30px;
+        }
+
+        .gallary {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            align-items: center;
+        }
+
+        .gal-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            column-gap: 30px;
+            row-gap: 50px;
+        }
+
+
+        .gal-images img {
+            width: 250px;
+            height: 300px;
+            border-radius: 15px;
+
+        }
+
+        .gal-images img:hover {
+            transform: scale(1.05, 1.05);
+            transition: all 1s ease-out;
+        }
+
+
+        #package {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            row-gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .package-body {
+            display: flex;
+            column-gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 30px;
+
+        }
+
+        .package-body img {
+            margin: 10px;
+        }
+
+        .package-card {
+            width: 280px;
+            height: 365px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .package-card:hover {
+            transform: scale(1.05, 1.05);
+            transition: all 1s ease-out;
+        }
+
+        .package-card-body {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin: 10px;
+        }
+
+        .package-card-body p {
+            color: black;
+        }
+
+        .package-card-body h3 {
+            color: black;
+            font-size: 22px;
+        }
+
+        .rating i {
+            color: orange;
+        }
+
+        .package-card-body button {
+            height: 30px;
+            width: 100px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+
+        #book {
+            display: flex;
+            margin-top: 70px;
+            justify-content: space-evenly;
+
+        }
+
+        .book-form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        h3 {
+            color: white;
+        }
+
+        .book-form form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+        }
+
+        label {
+            color: white;
+            margin-left: 5px;
+        }
+
+        .book-form form input {
+            width: 450px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .form-box textarea {
+            border-radius: 10px;
+        }
+
+        ::placeholder {
+            position: relative;
+            left: 10px;
+        }
+
+        #review {
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+            row-gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .customer-box {
+            display: flex;
+            justify-content: center;
+            column-gap: 30px;
+
+        }
+
+        .customer-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            border: 1px solid black;
+            padding: 10px;
+            row-gap: 10px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+
+        .profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile img {
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .profile h3 {
+            color: black;
+        }
+
+        .customer-card p {
+            text-align: justify;
+            color: black;
+        }
+
+
+
+        #contact {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 150px;
+        }
+
+        .contact-box {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        .contact-box h2 {
+            color: white;
+            font-size: 2.2rem;
+        }
+
+        .contact-box p {
+            font-size: 20px;
+        }
+
+        .form1 {
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+        }
+
+        .form1 input {
+            width: 450px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .form1 textarea {
+            border-radius: 10px;
+        }
+
+        .form1 button {
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 200px;
+            background-color: #160742;
+            border-top: 2px solid white;
+        }
+
+        footer .row {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            row-gap: 5px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .row h3 {
+            text-decoration: underline;
+        }
+
+        .row a {
+            color: white;
+        }
+
+        .pnges {
+            display: flex;
+            column-gap: 10px;
+        }
+
+        .row .pnges i {
+            font-size: 20px;
+            color: white;
+        }
+
+        .row1 {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .row1 h3 {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="nav">
+        <img class="logo" src="./images/images/logo.png" alt="">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#package">Packages</a></li>
+            <li><a href="./home.html">Country info</a></li>
+            <li><a href="#book">Book</a></li>
+            <li><a href="#review">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="userName">
+            <div class="userlogo"><i class="fa-regular fa-circle-user"></i> <span class="log-user">Guest</span></div>
+            <button class="admin">Admin Login</button>
+        </div>
+    </nav>
+
+
+
+    <div id="home">
+        <img class="main-logo" src="./images/images/b1.jpg" alt="">
+        <div class="box">
+            <h1>Travel The World & Explore The New Destination</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, itaque perferendis sapiente odit quia
+                blanditiis exercitationem aut vel molestias expedita.</p>
+            <button><a href="#package">Packages</a></button>
+        </div>
+    </div>
+
+
+
+    <div id="service">
+        <div class="service-header">
+            <h1>Services</h1>
+        </div>
+
+        <div class="row">
+            <div class="card">
+                <i class="fas fa-globe-asia"></i>
+                <div class="card-body">
+                    <h1>Around The World</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero suscipit eos quam
+                        explicabo quas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-plane"></i>
+                <div class="card-body">
+                    <h1>Fastet Travel</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero suscipit eos quam
+                        explicabo quas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-hotel"></i>
+                <div class="card-body">
+                    <h1>Affordable Hotels</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero suscipit eos quam
+                        explicabo quas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-bullhorn"></i>
+                <div class="card-body">
+                    <h1>Safty Guide</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero suscipit eos quam
+                        explicabo quas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about">
+        <img src="./images/images/about-img.png" alt="">
+
+        <div class="about-body">
+            <div class="about-header">
+                <h1>About us</h1>
+            </div>
+            <div class="about-info">
+                <h1>How Work This Travel Info</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquam nemo corrupti rem,
+                    consequatur aliquid sunt? Saepe enim atque blanditiis!</p>
+                <button>Read More</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="gallary">
+        <h1>Our Gallary <span><i class="fa-solid fa-arrow-down"></i></span></h1>
+
+        <div class="gal-images">
+            <img src="./images/images/p1.jpg" alt="">
+            <img src="./images/images/p2.png" alt="">
+            <img src="./images/images/p3.png" alt="">
+            <img src="./images/images/p4.png" alt="">
+            <img src="./images/images/p5.png" alt="">
+        </div>
+
+    </div>
+
+
+    <div id="package">
+
+    </div>
+
+
+
+    <div id="book">
+        <img src="./images/images/book-img.png" alt="">
+        <div class="book-form">
+            <h3>BOOK YOUR DESTINATION</h3>
+
+            <form action="">
+
+                <div class="form-box">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter Your Name " required>
+                </div>
+
+                <div class="form-box">
+                    <label for="phone">Mobile Number</label>
+                    <input type="tel" id="phone" placeholder="Enter Your Phone Number" required>
+                </div>
+
+                <div class="form-box">
+                    <label for="where">Where</label>
+                    <input type="text" id="where" placeholder="Enter Destination Place" required>
+                </div>
+
+                <div class="form-box">
+                    <label for="mem">Members</label>
+                    <input type="num" id="mem" placeholder="How Many" required>
+                </div>
+
+                <div class="form-box">
+                    <label for="start">Start Date</label>
+                    <input type="date" id="start" required>
+                </div>
+
+                <div class="form-box">
+                    <label for="end">End Date</label>
+                    <input type="date" id="end" required>
+                </div>
+
+                <div class="form-box">
+                    <label for="info">Members Information</label>
+                    <textarea name="info" id="info" cols="50" rows="10" placeholder="Enter Members Name & details"
+                        required></textarea>
+                </div>
+
+                <input class="sub-Btn" type="submit" value="Book Now">
+            </form>
+        </div>
+    </div>
+
+
+    <div id="review">
+        <h1>What Customers Say</h1>
+        <div class="customer-box">
+            <div class="customer-card">
+                <div class="profile">
+                    <img src="./images/images/pic-1.png" alt="">
+                    <h3>Venkatesh</h3>
+                </div>
+                <div class="rating">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, iusto aspernatur blanditiis vel,
+                    maxime consequatur dicta sequi nemo ea quasi quae qui sed explicabo est!</p>
+            </div>
+
+
+            <div class="customer-card">
+                <div class="profile">
+                    <img src="./images/images/pic-2.png" alt="">
+                    <h3>Harini</h3>
+                </div>
+                <div class="rating">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, iusto aspernatur blanditiis vel,
+                    maxime consequatur dicta sequi nemo ea quasi quae qui sed explicabo est!</p>
+            </div>
+
+
+            <div class="customer-card">
+                <div class="profile">
+                    <img src="./images/images/pic-3.png" alt="">
+                    <h3>Anvesh</h3>
+                </div>
+                <div class="rating">
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, iusto aspernatur blanditiis vel,
+                    maxime consequatur dicta sequi nemo ea quasi quae qui sed explicabo est!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="contact">
+        <div class="contact-box">
+            <h2>Get in Touch</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum error debitis provident veritatis!
+                Praesentium assumenda nostrum voluptas nihil cupiditate. Natus.</p>
+            <p>+91 6300000000</p>
+            <p>Example@gmail.com</p>
+            <p>Hyderbad, india</p>
+        </div>
+        <form class="form1" action="">
+            <input type="text" placeholder="Name" required>
+            <input type="tel" placeholder="Mobile" required>
+            <input type="email" placeholder="Email" required>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
+            <button>Send Me</button>
+        </form>
+    </div>
+
+
+
+    <footer>
+        <div class="row">
+            <h1>Travel Info</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi provident doloremque incidunt nostrum
+                ad quasi rerum odit optio laborum quis?</p>
+            <div class="pnges">
+                <i class="fa-brands fa-pinterest"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3>UseFull Links</h3>
+
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Packages</a>
+            <a href="#">Book</a>
+            <a href="#">Country Info</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="row1">
+            <h3>Other Links</h3>
+            <p>Terms & Conditions</p>
+            <p>Privacy Policy</p>
+
+        </div>
+    </footer>
+</body>
+
+
+
+
+<script>
+
+    var data = window.localStorage.getItem("userinfo")
+    var user = JSON.parse(data)
+    if (data) {
+        document.getElementsByClassName("log-user")[0].innerText = user[0]["name"]
+    }
+
+
+    document.getElementsByClassName("admin")[0].addEventListener("click",()=>{
+        window.location.assign("adminlogin.html")
+    })
+
+
+    var packageData = [{
+        image: "./images/images/united state.png",
+        place: "United States",
+        description: "Lorem ipsum dolor sit amet.",
+        price: 999
+
+    },
+    {
+        image: "./images/images/china.png",
+        place: "China",
+        description: "Lorem ipsum dolor sit amet.",
+        price: 999
+
+    },
+    {
+        image: "./images/images/Greece.png",
+        place: "Greece",
+        description: "Lorem ipsum dolor sit amet.",
+        price: 999
+
+    },
+    {
+        image: "./images/images/Italy.png",
+        place: "Italy",
+        description: "Lorem ipsum dolor sit amet.",
+        price: 999
+
+    },
+    {
+        image: "./images/images/france.png",
+        place: "France",
+        description: "Lorem ipsum dolor sit amet.",
+        price: 999
+
+    },
+    {
+        image: "./images/images/jordan.png",
+        place: "Jordan",
+        description: "Lorem ipsum dolor sit amet.",
+        price: 999
+
+    },
+    {
+        image: "./images/images/Mexico.png",
+        place: "Mexico",
+        description: "Lorem ipsum dolor sit amet.",
+        price: 999
+
+    },
+    {
+        image: "./images/images/Spain.png",
+        place: "Spain",
+        description: "Lorem ipsum dolor sit amet.",
+        price: 999
+    }
+    ]
+
+
+    var package = document.getElementById("package")
+
+    var packageText = document.createElement("div")
+    packageText.setAttribute("class", "package-text")
+    package.appendChild(packageText)
+
+    var h1tag = document.createElement("h1")
+    h1tag.innerText = "Packages"
+    packageText.appendChild(h1tag)
+
+    var packageBody = document.createElement("div")
+    packageBody.setAttribute("class", "package-body")
+    package.appendChild(packageBody)
+
+    for (let i = 0; i < packageData.length; i++) {
+        var packageCard = document.createElement("div")
+        packageCard.setAttribute("class", "package-card")
+        packageBody.appendChild(packageCard)
+
+        var imgg = document.createElement("img")
+        imgg.setAttribute("src", packageData[i].image)
+        packageCard.appendChild(imgg)
+
+        var packageCardBody = document.createElement("div")
+        packageCardBody.setAttribute("class", "package-card-body")
+        packageCard.appendChild(packageCardBody)
+
+        var h3tag = document.createElement("h3")
+        h3tag.innerText = packageData[i].place
+        packageCardBody.appendChild(h3tag)
+
+        var ptag = document.createElement("p")
+        ptag.innerText = packageData[i].description
+        packageCardBody.appendChild(ptag)
+
+        var rating = document.createElement("div")
+        rating.setAttribute("class", "rating")
+        packageCardBody.appendChild(rating)
+
+        for (var j = 0; j < 5; j++) {
+            var itag = document.createElement("i")
+            itag.setAttribute("class", "fa-solid fa-star checked")
+            rating.appendChild(itag)
+        }
+
+        var h4tag = document.createElement("h4")
+        h4tag.innerText = "Price: $" + packageData[i].price
+        packageCardBody.appendChild(h4tag)
+
+        var btn = document.createElement("button")
+        btn.innerText = "Book Now"
+        packageCardBody.appendChild(btn)
+
+        btn.addEventListener("click", () => {
+            window.localStorage.setItem("packageInfo", JSON.stringify(packageData[i]))
+            window.location.assign("#book")
+            window.location.reload();
+        })
+    }
+
+
+    var a = window.localStorage.getItem("packageInfo")
+    var data = JSON.parse(a)
+    console.log(data)
+    document.getElementById("where").value = data.place
+
+    bookingArray = []
+    document.forms[0].addEventListener("submit", (e) => {
+        e.preventDefault();
+        var bookingData = {
+            name: e.target[0].value,
+            mobile: e.target[1].value,
+            destination: e.target[2].value,
+            members: e.target[3].value,
+            startDate: e.target[4].value,
+            EndDate: e.target[5].value,
+            MemberInfo: e.target[6].value
+        }
+
+        bookingArray.push(bookingData)
+        window.localStorage.setItem("bookinginfo", JSON.stringify(bookingArray));
+        alert("Booking is Sucessfully")
+        e.target[0].value = ""
+        e.target[1].value = ""
+        e.target[2].value = ""
+        e.target[3].value = ""
+        e.target[1].value = ""
+        e.target[2].value = ""
+        e.target[3].value = ""
+
+
+    })
+
+    contactArray = []
+    document.forms[1].addEventListener("submit", (e) => {
+        e.preventDefault();
+        contactData = {
+            name: e.target[0].value,
+            mobile: e.target[1].value,
+            email: e.target[2].value,
+            message: e.target[3].value
+        }
+
+        contactArray.push(contactData)
+        window.localStorage.setItem("contactInfo", JSON.stringify(contactArray))
+        alert("Submitted SucessFully")
+
+        e.target[0].value = ""
+        e.target[1].value = ""
+        e.target[2].value = ""
+        e.target[3].value = ""
+    })
+</script>
+
+</html>
