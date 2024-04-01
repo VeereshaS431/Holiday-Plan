@@ -4,38 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
+    <title>sign in</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            margin-top: 50px;
             flex-direction: column;
-            background-image: url(./images/signup.jpg);
+            height: 90vh;
+            background-image: url(./images/1534530.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            /* background-color: #0A1D56; */
             
         }
 
         .main {
             display: flex;
             flex-direction: column;
-            width: 50vh;
+            width: 350px;
             gap: 10px;
             justify-content: center;
             align-items: center;
-            background: rgba(82, 159, 169, 0.83);
             backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.222);
             border-radius: 15px;
         }
-
 
         form {
             display: flex;
             flex-direction: column;
-            width: 90%;
+            width: 300px;
             gap: 10px;
 
         }
@@ -43,17 +44,16 @@
         input {
             height: 50px;
             border-radius: 10px;
+            /* background: transparent; */
+            font-size: 20px;
+            /* color: rgb(26, 32, 39); */
             font-weight: bold;
-            border: none;
-            color: rgb(0, 0, 0);
-            background-color: rgba(240, 248, 255, 0.567);
         }
 
         ::placeholder {
-
-            color: rgb(90, 86, 85);
+            color: rgba(75, 81, 81, 0.99);
             font-weight: bold;
-            /* text-align: center; */
+            font-size: 15px;
             position: relative;
             left: 10px;
 
@@ -65,116 +65,231 @@
             background-color: rgb(255, 255, 255);
             margin-top: 10px;
             width: 80px;
-            color: rgb(115, 89, 79);
+            color: rgb(63, 62, 61);
             margin-bottom: 20px;
             font-weight: bold;
             position: relative;
             left: 37%;
+            font-size: 15px;
         }
 
         #btn:hover {
             background-color: black;
             color: white;
-           
-        }
 
-        h1 {
-            color:rgba(255, 255, 255, 0.929);
-        }
-
-        label{
-            color: rgb(252, 248, 248);
         }
         a{
             color: white;
-            /* text-decoration: nones; */
+        }
+
+        h1 {
+            color: aliceblue;
+            font-family: sans-serif;
+        }
+        .divguest{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .guest{
+            margin-bottom: 20px;
             margin-top: -10px;
         }
-        p{
-            font-size: 1.1rem;
+        .guest1{
+            text-decoration: underline;
+            color: aliceblue;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-
-    <div>
-        <img src="" alt="">
-    </div>
-
     <div class="main">
-        <h1>Sign up</h1>
+        <h1>Sign in</h1>
         <form action="">
-            <input type="text" placeholder="Name" required>
             <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="password" required>
-            <input type="password" placeholder="Confirm password" required>
+            <input type="password" placeholder="Password" required>
             <label for=""></label>
             <input id="btn" type="submit">
         </form>
-
-        <p>Already have an account? <a href="./sign in.html">Sign in</a></p>
-
+        <div class="divguest">
+        <p>Not a Member ? <a href="./signup.html">Sign Up</a></p>
+        <p class="guest">Login as a <span class="guest1">Guest</span></p>
     </div>
+        <script>
 
-    <script>
+var store = localStorage.getItem("users");
+var arr = JSON.parse(store);
+console.log(arr);
 
-    document.forms[0].addEventListener("submit", function (e) {
-        e.preventDefault();
-        var users = {
-                name: e.target[0].value,
-                email: e.target[1].value,
-                password: e.target[2].value,
-                confirmPassword: e.target[3].value
-            }
+document.forms[0].addEventListener("submit", function (e) {
+    e.preventDefault();
+    var users = {
+        email: e.target[0].value,
+        password: e.target[1].value,
+    };
 
+    let userdata = [];
 
-        console.log(name);
+    function clear_error() {
+    var lab = document.getElementsByTagName("label")
+    lab[0].innerText = ""
+    }
 
-        let user_records = JSON.parse(localStorage.getItem("users")) || [];
+    let foundUser = arr.find((data) => {
+        return data.email === users.email && data.password === users.password;
+    });
 
-
-        function checkData(data) {
-        return data.email==users.email;
-        }
-
-        function clear_error(){
-                var lab = document.getElementsByTagName("label")
-                   lab[0].innerText = ""
-            }
-
-        if(user_records.some(checkData)){
-            var lab = document.getElementsByTagName("label")
-            lab[0].innerText = "Email Already Exists"
-        }
-
-        else{
-
-            if(users.password!=users.confirmPassword){
-                var lab = document.getElementsByTagName("label")
-                lab[0].innerText = "Password do not match"
-            }
-            else{
-            clear_error();
-            user_records.push(users)
-            localStorage.setItem("users",JSON.stringify(user_records));
-            alert("signup Successfully ")
-            }
-        }
+    if (foundUser) {
+        clear_error();
+        alert("Login Successfully");
+        userdata.push(foundUser);
+        console.log(userdata)
+        localStorage.setItem("userinfo", JSON.stringify(userdata));
+        window.location.assign("./main.html");
+    } else {
+        var lab = document.getElementsByTagName("label");
+        lab[0].innerText = "Invalid Email or Password";
+    }
 
 
-        e.target[0].value = "";
-        e.target[1].value = "";
-        e.target[2].value = "";
-        e.target[3].value = "";
-    })
+    e.target[0].value = "";
+    e.target[1].value = "";
 
-    
+});
 
 
-    </script>
+document.getElementsByClassName("guest1")[0].addEventListener("click",()=>{
+    window.localStorage.removeItem("userinfo")
+    window.location.assign("./main.html");
+    // document.getElementsByClassName("guest")[0].style.color="red"
+})
+
+
+
+
+
+
+
+
+
+            // var store = localStorage.getItem("users")
+            // var arr = JSON.parse(store)
+            // console.log(arr)
+
+
+
+            // document.forms[0].addEventListener("submit", function (e) {
+
+            //     e.preventDefault();
+            //     var users = {
+            //         email: e.target[0].value,
+            //         password: e.target[1].value,
+
+            //     }
+
+            //     let userdata = []
+
+                //     function checkEmail(data) {
+                //         return data.email == users.email;
+                //     }
+
+                //     function checkPassword(data) {
+                //         return data.password == users.password;
+                //     }
+
+                //     function retriveData(data) {
+
+                //         if(data.email == users.email){
+
+                //         if(data.password == users.password){
+                //             return data;
+                //         }
+                //     }
+                //     }
+
+                //     function clear_error() {
+                //         var lab = document.getElementsByTagName("label")
+                //         lab[0].innerText = ""
+                //     }
+
+
+                //     if (arr.some(checkEmail)) {
+
+                //         clear_error();
+
+                //         if(arr.some(checkPassword)){
+                //             clear_error();
+                //             alert("Login Sucessfully")
+                //             userdata.push(arr.some())
+                //             localStorage.setItem("userinfo", JSON.stringify(userdata))
+                //             window.location.assign("./main.html")
+                //         }
+                //         else{
+                //             var lab = document.getElementsByTagName("label")
+                //             lab[0].innerText = "Enter a Valid Password"
+                //         }
+
+                //     }
+                //     else {
+                //         var lab = document.getElementsByTagName("label")
+                //         lab[0].innerText = "Enter a Valid Email Id"
+                //     }
+
+                // }
+
+
+
+
+
+               
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+                // for (i = 0; i < arr.length; i++) {
+                //     if (users["email"] == arr[i]["email"]) {
+                //         if (users["password"] == arr[i]["password"]) {
+                //             userdata.push(arr[i])
+                //             console.log(userdata)
+                //             localStorage.setItem("userinfo", JSON.stringify(userdata))
+                //             window.location.assign("./main.html")
+                //             alert("Login Sucessfully")
+                //         }
+                //         else {
+                //             var lab = document.getElementsByTagName("label")
+                //             lab[0].innerText = "Enter a Valid Password"
+                //         }
+                //     }
+                //     else {
+                //         var lab = document.getElementsByTagName("label")
+                //         lab[0].innerText = "Enter a Valid Email Id"
+                //     }
+                // }
+
+
+
+            //     e.target[0].value = "";
+            //     e.target[1].value = "";
+
+            // });
+
+
+
+
+
+        </script>
 </body>
 
 </html>
