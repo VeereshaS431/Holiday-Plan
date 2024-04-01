@@ -234,6 +234,7 @@
             width: 100%;
             gap: 20px;
             margin-top: 80px;
+            margin-bottom: 30px;
         }
 
         #card {
@@ -478,13 +479,13 @@
         function onSubmitFindEmbassy(e) {
             e.preventDefault();
             document.querySelector('.container').innerHTML = '';
-            var n1=e.target[0].value
-            var name1=n1.replace(" ","%20")
+            let n1=e.target[0].value
+            let name1=n1.replace(" ","%20")
 
-            var n2=e.target[1].value
-            var name2=n2.replace(" ","%20")
-            console.log(e.target[0].value)
-            console.log(e.target[1].value)
+            let n2=e.target[1].value
+            let name2=n2.replace(" ","%20")
+            console.log(name1)
+            console.log(name2)
 
             const url = `https://travel-info-api.p.rapidapi.com/find-embassy?source=${name1}&destination=${name2}`;
 
