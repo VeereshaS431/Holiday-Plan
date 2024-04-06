@@ -84,7 +84,7 @@
             color: white;
         }
 
-        .userName button:active{
+        .userName button:active {
             background-color: rgb(241, 244, 247);
             color: black;
         }
@@ -162,7 +162,7 @@
 
         .card {
             width: 300px;
-            height: 250px;
+            /* height: 250px; */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -172,8 +172,9 @@
             background-color: #20124e;
             border-radius: 10px;
             box-shadow: 5px 5px 20px black;
+            padding: 15px;
 
-
+            
         }
 
         .card:hover {
@@ -189,6 +190,12 @@
             row-gap: 20px;
             text-align: center;
         }
+
+        .card-body p{
+            font-size: 18px;
+        }
+
+
 
         #service .card i {
             font-size: 50px;
@@ -208,8 +215,8 @@
 
         }
 
-        h1,
-        p {
+        h2,
+        p,h1 {
             color: white;
         }
 
@@ -273,6 +280,7 @@
             text-align: center;
             margin-left: 110px;
             margin-right: 50px;
+            font-size: 18px;
         }
 
         .about-info button {
@@ -312,7 +320,6 @@
             transition: all 1s ease-out;
         }
 
-
         #package {
             width: 100%;
             display: flex;
@@ -329,18 +336,14 @@
             flex-wrap: wrap;
             justify-content: center;
             row-gap: 30px;
-
-        }
-
-        .package-body img {
-            margin: 10px;
         }
 
         .package-card {
-            width: 290px;
-            height: 370px;
+            width: 300px;
+            /* height: 400px; */
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             border: 1px solid black;
             border-radius: 10px;
             background-color: white;
@@ -351,24 +354,44 @@
             transition: all 1s ease-out;
         }
 
-        .package-card-body {
-            display: flex;
-            flex-direction: column;
-            row-gap: 10px;
-            margin: 10px;
+        .package-card img {
+            width: 100%;
+            /* Make image fill the width of the card */
+            height: 200px;
+            /* Adjust as needed */
+            object-fit: cover;
+            /* Ensure the image covers the entire area */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
 
-        .package-card-body p {
-            color: black;
+        .package-card-body {
+            padding: 10px;
         }
 
         .package-card-body h3 {
             color: black;
             font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .package-card-body p {
+            color: black;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .rating {
+            display: flex;
         }
 
         .rating i {
             color: orange;
+        }
+
+        .package-card-body h4 {
+            color: black;
+            margin-top: 10px;
         }
 
         .package-card-body button {
@@ -377,7 +400,10 @@
             border-radius: 5px;
             cursor: pointer;
             border: none;
+            align-self: center;
+            margin-top: 10px;
         }
+
 
         #book {
             display: flex;
@@ -424,6 +450,8 @@
 
         .form-box textarea {
             border-radius: 10px;
+            resize: none;
+            overflow-x: hidden;
         }
 
         ::placeholder {
@@ -522,6 +550,8 @@
 
         .form1 textarea {
             border-radius: 10px;
+            resize: none;
+            overflow-x: hidden;
         }
 
         .form1 button {
@@ -607,8 +637,7 @@
         <img class="main-logo" src="./images/images/b1.jpg" alt="">
         <div class="box">
             <h1>Travel The World & Explore The New Destination</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, itaque perferendis sapiente odit quia
-                blanditiis exercitationem aut vel molestias expedita.</p>
+            <p>Welcome to our travel Info. Explore new destinations and plan your next adventure with us!</p>
             <button><a href="#package">Packages</a></button>
         </div>
     </div>
@@ -624,36 +653,32 @@
             <div class="card">
                 <i class="fas fa-globe-asia"></i>
                 <div class="card-body">
-                    <h1>Around The World</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero suscipit eos quam
-                        explicabo quas.</p>
+                    <h2>Around The World</h2>
+                    <p>Discover our global travel packages and explore the world's most fascinating destinations.</p>
                 </div>
             </div>
 
             <div class="card">
                 <i class="fas fa-plane"></i>
                 <div class="card-body">
-                    <h1>Fastet Travel</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero suscipit eos quam
-                        explicabo quas.</p>
+                    <h2>Fastest Travel</h2>
+                    <p>Experience the fastest and most convenient travel options with our exclusive travel services.</p>
                 </div>
             </div>
 
             <div class="card">
                 <i class="fas fa-hotel"></i>
                 <div class="card-body">
-                    <h1>Affordable Hotels</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero suscipit eos quam
-                        explicabo quas.</p>
+                    <h2>Affordable Hotels</h2>
+                    <p>Find the best deals on comfortable and affordable accommodations for your trip.</p>
                 </div>
             </div>
 
             <div class="card">
                 <i class="fas fa-bullhorn"></i>
                 <div class="card-body">
-                    <h1>Safty Guide</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero suscipit eos quam
-                        explicabo quas.</p>
+                    <h2>Safty Guide</h2>
+                    <p>Stay safe during your travels with our comprehensive safety tips and guidelines.</p>
                 </div>
             </div>
         </div>
@@ -669,8 +694,7 @@
             </div>
             <div class="about-info">
                 <h1>How Work This Travel Info</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquam nemo corrupti rem,
-                    consequatur aliquid sunt? Saepe enim atque blanditiis!</p>
+                <p>Learn about our travel information services and how we can help you plan your dream vacation.</p>
                 <button>Read More</button>
             </div>
         </div>
@@ -761,8 +785,7 @@
                     <i class="fa-solid fa-star checked"></i>
                     <i class="fa-solid fa-star checked"></i>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, iusto aspernatur blanditiis vel,
-                    maxime consequatur dicta sequi nemo ea quasi quae qui sed explicabo est!</p>
+                <p>Great service! I had an amazing experience traveling with Travel Info. Highly recommended!</p>
             </div>
 
 
@@ -776,10 +799,10 @@
                     <i class="fa-solid fa-star checked"></i>
                     <i class="fa-solid fa-star checked"></i>
                     <i class="fa-solid fa-star checked"></i>
-                    <i class="fa-solid fa-star checked"></i>
+                    <i class="fa-solid fa-star checked" style="color: black;"></i>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, iusto aspernatur blanditiis vel,
-                    maxime consequatur dicta sequi nemo ea quasi quae qui sed explicabo est!</p>
+                <p>Travel Info made my trip hassle-free! From booking to accommodations, everything was well-organized.
+                </p>
             </div>
 
 
@@ -795,8 +818,8 @@
                     <i class="fa-solid fa-star checked"></i>
                     <i class="fa-solid fa-star checked"></i>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, iusto aspernatur blanditiis vel,
-                    maxime consequatur dicta sequi nemo ea quasi quae qui sed explicabo est!</p>
+                <p>Good service and friendly staff. I had a memorable vacation thanks to Travel Info's recommendations.
+                </p>
             </div>
         </div>
     </div>
@@ -805,8 +828,7 @@
     <div id="contact">
         <div class="contact-box">
             <h2>Get in Touch</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum error debitis provident veritatis!
-                Praesentium assumenda nostrum voluptas nihil cupiditate. Natus.</p>
+            <p>Contact us for any inquiries or assistance. We're here to help you plan your perfect vacation!</p>
             <p>+91 6300000000</p>
             <p>Example@gmail.com</p>
             <p>Hyderbad, india</p>
@@ -825,8 +847,9 @@
     <footer>
         <div class="row">
             <h1>Travel Info</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi provident doloremque incidunt nostrum
-                ad quasi rerum odit optio laborum quis?</p>
+            <p>Welcome to Travel Info, your go-to source for all your travel needs. Whether you're looking for
+                exciting vacation packages, reliable travel services, or helpful travel tips, we've got you covered.
+                Plan your next adventure with us!</p>
             <div class="pnges">
                 <i class="fa-brands fa-pinterest"></i>
                 <i class="fa-brands fa-facebook"></i>
@@ -850,7 +873,6 @@
             <h3>Other Links</h3>
             <p>Terms & Conditions</p>
             <p>Privacy Policy</p>
-
         </div>
     </footer>
 </body>
@@ -867,67 +889,62 @@
     }
 
 
-    document.getElementsByClassName("admin")[0].addEventListener("click",()=>{
+    document.getElementsByClassName("admin")[0].addEventListener("click", () => {
         window.location.assign("adminlogin.html")
     })
 
 
-    var packageData = [{
-        image: "./images/images/united state.png",
-        place: "United States",
-        description: "Lorem ipsum dolor sit amet.",
-        price: 999
+    var packageData = [
+        {
+            image: "./images/images/united state.png",
+            place: "United States",
+            description: "Explore the diverse landscapes and vibrant cities of the United States. From the bustling streets of New York City to the breathtaking beauty of the Grand Canyon, there's something for everyone in the USA.",
+            price: 999
+        },
+        {
+            image: "./images/images/china.png",
+            place: "China",
+            description: "Experience the rich history and culture of China. Visit iconic landmarks such as the Great Wall and the Forbidden City, Imperial Palace, The Summer Palace, and sample delicious Chinese cuisine.",
+            price: 999
+        },
+        {
+            image: "./images/images/Greece.png",
+            place: "Greece",
+            description: "Immerse yourself in the ancient history and stunning landscapes of Greece. Explore the ruins of Athens, relax on the beautiful beaches of the Greek Islands, and indulge in delicious Mediterranean cuisine.",
+            price: 999
+        },
+        {
+            image: "./images/images/Italy.png",
+            place: "Italy",
+            description: "Discover the art, culture, and cuisine of Italy. Visit historic cities such as Rome, Florence, and Venice, and sample world-renowned Italian dishes like pasta and gelato.",
+            price: 999
+        },
+        {
+            image: "./images/images/france.png",
+            place: "France",
+            description: "Experience the romance and charm of France. Explore the iconic landmarks of Paris, such as the Eiffel Tower and the Louvre, and indulge in French cuisine and wine.",
+            price: 999
+        },
+        {
+            image: "./images/images/jordan.png",
+            place: "Jordan",
+            description: "Explore the ancient wonders of Jordan. Visit the rock-cut city of Petra, float in the Dead Sea, explore the desert landscapes of Wadi Rum, Ajloun Castle, Karak Castle and Dana Nature Reserve.",
+            price: 999
+        },
+        {
+            image: "./images/images/Mexico.png",
+            place: "Mexico",
+            description: "Experience the vibrant culture and rich history of Mexico. Visit ancient Mayan ruins, relax on the beautiful beaches of Cancun, and sample delicious Mexican cuisine.",
+            price: 999
+        },
+        {
+            image: "./images/images/Spain.png",
+            place: "Spain",
+            description: "Discover the vibrant culture and stunning architecture of Spain. Visit historic cities such as Barcelona and Madrid, explore beautiful beaches, and enjoy delicious Spanish tapas.",
+            price: 999
+        }
+    ];
 
-    },
-    {
-        image: "./images/images/china.png",
-        place: "China",
-        description: "Lorem ipsum dolor sit amet.",
-        price: 999
-
-    },
-    {
-        image: "./images/images/Greece.png",
-        place: "Greece",
-        description: "Lorem ipsum dolor sit amet.",
-        price: 999
-
-    },
-    {
-        image: "./images/images/Italy.png",
-        place: "Italy",
-        description: "Lorem ipsum dolor sit amet.",
-        price: 999
-
-    },
-    {
-        image: "./images/images/france.png",
-        place: "France",
-        description: "Lorem ipsum dolor sit amet.",
-        price: 999
-
-    },
-    {
-        image: "./images/images/jordan.png",
-        place: "Jordan",
-        description: "Lorem ipsum dolor sit amet.",
-        price: 999
-
-    },
-    {
-        image: "./images/images/Mexico.png",
-        place: "Mexico",
-        description: "Lorem ipsum dolor sit amet.",
-        price: 999
-
-    },
-    {
-        image: "./images/images/Spain.png",
-        place: "Spain",
-        description: "Lorem ipsum dolor sit amet.",
-        price: 999
-    }
-    ]
 
 
     var package = document.getElementById("package")
